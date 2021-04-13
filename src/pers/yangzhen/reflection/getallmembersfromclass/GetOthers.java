@@ -67,5 +67,11 @@ public class GetOthers {
         }
     }
 
+    //获取运行时类所在的包
+    @Test
+    public void test4(){
+
+    }
+
 
 }
