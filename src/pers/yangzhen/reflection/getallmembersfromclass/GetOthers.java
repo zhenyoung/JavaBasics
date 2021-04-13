@@ -50,4 +50,22 @@ public class GetOthers {
         System.out.println(actualTypeArguments[0].getTypeName());
     }
 
+    //获取运行时类的接口
+    @Test
+    public void test3(){
+        Class<Person> personClass = Person.class;
+        Class<?>[] interfaces = personClass.getInterfaces();
+        for (Class<?> anInterface : interfaces) {
+            System.out.println(anInterface);
+        }
+        System.out.println();
+
+        //获取运行时类父类实现的接口
+        Class<?>[] interfaces1 = personClass.getSuperclass().getInterfaces();
+        for (Class<?> anInterface1 : interfaces1) {
+            System.out.println(anInterface1);
+        }
+    }
+
+
 }
