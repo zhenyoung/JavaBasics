@@ -71,6 +71,7 @@ public class ReflectionTest {
     public void test3() throws Exception{
         Class<Person> personClass = Person.class;
 
+
         //1.获取指定的构造器
         //getConstructor
         Constructor<Person> constructor = personClass.getDeclaredConstructor(String.class);
