@@ -2,6 +2,7 @@ package pers.yangzhen.reflection.getallmembersfromclass;
 
 import org.junit.Test;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -70,7 +71,20 @@ public class GetOthers {
     //获取运行时类所在的包
     @Test
     public void test4(){
+        Class<Person> personClass = Person.class;
+        Package aPackage = personClass.getPackage();
+        System.out.println(aPackage);
+    }
 
+    //获取运行时类声明的注解
+    @Test
+    public void test5(){
+        Class<Person> personClass = Person.class;
+
+        Annotation[] annotations = personClass.getAnnotations();
+        for (Annotation annotation : annotations) {
+            System.out.println(annotation);
+        }
     }
 
 
