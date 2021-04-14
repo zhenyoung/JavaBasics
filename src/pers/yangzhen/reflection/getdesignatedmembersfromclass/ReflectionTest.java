@@ -46,7 +46,7 @@ public class ReflectionTest {
         Class<Person> personClass = Person.class;
         Person p = personClass.newInstance();
 
-        //1.获取指定的某个方法
+        //获取指定的某个方法
         //getDeclaredMethod(String name, Class<?>... parameterTypes)获取指定形参列表的名称为name的方法
         Method show = personClass.getDeclaredMethod("show", String.class);
         show.setAccessible(true);//保证当前方法是可访问的
@@ -54,8 +54,7 @@ public class ReflectionTest {
         //invoke()参数1：方法的调用者，参数2：给方法形参赋值的实参
         String nation = (String) show.invoke(p,"CHN");//p.show("CHN");
         //注意：invoke()的返回值即为调用的方法show的返回值，所以上面进行了强转（因为返回为Object）
-
-
+        System.out.println(nation);
         //关于静态方法的调用
         Method showDescription = personClass.getDeclaredMethod("showDescription");
         showDescription.setAccessible(true);
@@ -70,7 +69,6 @@ public class ReflectionTest {
     @Test
     public void test3() throws Exception{
         Class<Person> personClass = Person.class;
-
 
         //1.获取指定的构造器
         //getConstructor

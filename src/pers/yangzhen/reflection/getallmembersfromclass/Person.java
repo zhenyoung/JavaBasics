@@ -24,8 +24,9 @@ public class Person extends Creature<String> implements Comparable<String>,MyInt
     }
 
     @MyAnnotation
-    public void show(String nation){
+    public String show(String nation){
         System.out.println("我是" + nation + "人");
+        return nation;
     }
     public String display(String interests, int age) throws NullPointerException,ClassCastException{
         return interests;
