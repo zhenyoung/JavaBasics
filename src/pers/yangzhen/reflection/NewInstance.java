@@ -6,7 +6,7 @@ import java.lang.reflect.Constructor;
 import java.util.Random;
 
 /**
- * 通过发射创建对应的运行时类的对象
+ * 通过反射创建对应的运行时类的对象
  * @author yangzhen
  * @create 2021-04-12 21:55
  */
