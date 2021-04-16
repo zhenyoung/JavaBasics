@@ -57,6 +57,8 @@ public class MethodReferences {
         Function<Double,Long> func3 = Math::round;
         System.out.println(func3.apply(3.3));//3
 
+
+
     }
 
     //情况三：类::实例方法
