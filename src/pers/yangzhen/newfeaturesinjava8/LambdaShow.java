@@ -10,7 +10,7 @@ import java.util.Comparator;
  * @author yangzhen
  * @create 2021-04-14 14:00
  */
-public class showLambda {
+public class LambdaShow {
     @Test
     public void test1() {
         Runnable r1 = new Runnable() {
