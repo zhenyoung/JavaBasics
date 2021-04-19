@@ -60,10 +60,10 @@ public class Exercises {
             //方式一：
             //indexOf(String str)返回str在当前字符串中第一次出现时的首字符索引
             //substring(int beginIndex)返回一个新的字符串，从beginIndex到当前字符串结束的子字符串
-            while ((index = mainStr.indexOf(subStr)) != -1) {
-                count++;
-                mainStr = mainStr.substring(index + subStr.length());//每次循环将起始索引往后挪，形成为一个新的mainStr
-            }
+//            while ((index = mainStr.indexOf(subStr)) != -1) {
+//                count++;
+//                mainStr = mainStr.substring(index + subStr.length());//每次循环将起始索引往后挪，形成为一个新的mainStr
+//            }
 
             //方式二：方式一的优化
             //indexOf(String str, int fromIndex)返回从fromIndex开始，str在当前字符串中第一此出现时的首字符索引
