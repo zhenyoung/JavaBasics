@@ -33,7 +33,7 @@ public class LambdaTest {
         };
         r1.run();
         System.out.println("*******************************************");
-        //Lambda表达式
+        // Lambda 表达式: 方法体只有一条语句, 故{}可以省略
         Runnable r2 = () -> {
             System.out.println("我是中国人");
         };
@@ -51,6 +51,7 @@ public class LambdaTest {
         };
         con.accept("北京欢迎你");
         System.out.println("*******************************************");
+        // lambda 表达式: 只有一个形参, 可以类型推断(语法3)，因此可以省略 String 和括号和{}
         Consumer<String> con1 = (String s) -> {
             System.out.println(s);
         };
@@ -86,7 +87,7 @@ public class LambdaTest {
 
     }
 
-    //语法格式5：Lambda需要两个或以上的参数，多条执行语句，并且可以有返回值
+    //语法格式5：Lambda若需要两个或以上的参数，多条执行语句，并且可以有返回值
     @Test
     public void test5(){
         Comparator<Integer> com1 = new Comparator<Integer>() {
@@ -120,7 +121,7 @@ public class LambdaTest {
         System.out.println(com2.compare(12, 21));
 
     }
-
+    // 综合以上:
     @Test
     public void test7(){
         Consumer<String> con1 = s -> {

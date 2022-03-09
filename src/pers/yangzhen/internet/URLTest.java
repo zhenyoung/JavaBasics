@@ -12,34 +12,23 @@ import java.net.URL;
 public class URLTest {
     @Test
     public void test1(){
-        URL url = null;
+        URL url;
         try {
             url = new URL("https://space.bilibili.com/927587/dynamic");
-
-            //public String getProtocol()获取协议名
+            // public String getProtocol() 获取协议名
             System.out.println(url.getProtocol());
-            //public String getHost()获取主机名
+            // public String getHost() 获取主机名
             System.out.println(url.getHost());
-            //public int getPort()获取端口号
+            // public int getPort() 获取端口号
             System.out.println(url.getPort());
-            //public String getPath()获取文件路径
+            // public String getPath() 获取文件路径
             System.out.println(url.getPath());
-            //public String getFile()获取文件名
+            // public String getFile() 获取文件名
             System.out.println(url.getFile());
-            //public String getQuery()获取URL的查询名
+            // public String getQuery() 获取 URL 的查询名
             System.out.println(url.getQuery());
-
-
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
     }
-
-    //实现TomCat服务端数据下载（待做）
-    @Test
-    public void test2(){
-
-    }
-
-
 }

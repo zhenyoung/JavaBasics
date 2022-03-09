@@ -10,24 +10,16 @@ import java.net.UnknownHostException;
 public class InetAddressTest {
     public static void main(String[] args) {
         try {
-            //ip地址
             InetAddress inet1 = InetAddress.getByName("112.80.248.76");
             System.out.println(inet1);
-            //域名
             InetAddress inet2 = InetAddress.getByName("www.baidu.com");
             System.out.println(inet2);
-
-            //获取本机的ip
             InetAddress localhost = InetAddress.getLocalHost();
             System.out.println(localhost);
-
-            System.out.println(inet2.getHostName());//获取域名
-            System.out.println(inet2.getHostAddress());//获取ip
-
+            System.out.println(inet2.getHostName());
+            System.out.println(inet2.getHostAddress());
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
-
     }
-
 }

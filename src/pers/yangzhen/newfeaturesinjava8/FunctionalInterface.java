@@ -31,9 +31,7 @@ public class FunctionalInterface {
         //Lambda表达式
         happyTime(400, price -> System.out.println("商品价格为：" + price));
     }
-
-
-
+    
     //根据给定的规则，过滤集合中的字符串，此规则由Predicate的方法决定
     public List<String> filterString(List<String> list, Predicate<String> pre) {
         ArrayList<String> filterList = new ArrayList<>();

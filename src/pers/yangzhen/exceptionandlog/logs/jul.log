@@ -1,0 +1,14 @@
+二月 25, 2022 11:57:40 上午 pers.yangzhen.exceptionandlog.LoggerTest test3
+严重: severe
+二月 25, 2022 11:57:40 上午 pers.yangzhen.exceptionandlog.LoggerTest test3
+警告: warning
+二月 25, 2022 11:57:40 上午 pers.yangzhen.exceptionandlog.LoggerTest test3
+信息: info
+二月 25, 2022 11:57:40 上午 pers.yangzhen.exceptionandlog.LoggerTest test3
+配置: config
+二月 25, 2022 11:57:40 上午 pers.yangzhen.exceptionandlog.LoggerTest test3
+详细: fine
+二月 25, 2022 11:57:40 上午 pers.yangzhen.exceptionandlog.LoggerTest test3
+较详细: finer
+二月 25, 2022 11:57:40 上午 pers.yangzhen.exceptionandlog.LoggerTest test3
+非常详细: finest

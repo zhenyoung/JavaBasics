@@ -13,50 +13,45 @@ import java.net.Socket;
  * @create 2021-04-11 17:09
  */
 public class TCPTest2 {
-
     @Test
     public void server() {
         ServerSocket serverSocket = null;
-        Socket socket = null;
-        InputStream is = null;
-        BufferedOutputStream bos = null;
+        Socket clientSocket = null;
+        InputStream inputStream = null;
+        BufferedOutputStream bufferedOutputStream = null;
         try {
             serverSocket = new ServerSocket(9090);
-            socket = serverSocket.accept();
-
-            //获取输入流读取服务端的输出流的文件
-            is = socket.getInputStream();
-
-            //输出文件路径
-            bos = new BufferedOutputStream(new FileOutputStream("E:/IDEAProject/JavaBasics/src/pers/yangzhen/internet/头像(CS端).jpg"));
-
+            // 监听客户端的请求
+            clientSocket = serverSocket.accept();
+            inputStream = clientSocket.getInputStream();
+            bufferedOutputStream = new BufferedOutputStream(
+                    new FileOutputStream("./src/pers/yangzhen/internet/头像(CS端).jpg"));
             byte[] buffer = new byte[1024];
             int len;
-            while ((len = is.read(buffer)) != -1) {
-                bos.write(buffer, 0, len);//将文件通过bos流写到指定路径下
+            while ((len = inputStream.read(buffer)) != -1) {
+                bufferedOutputStream.write(buffer, 0, len);
             }
             System.out.println("接收成功");
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            if (bos != null) {
+            if (bufferedOutputStream != null) {
                 try {
-                    bos.close();
+                    bufferedOutputStream.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
-
-            if (is != null) {
+            if (inputStream != null) {
                 try {
-                    is.close();
+                    inputStream.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
-            if (socket != null) {
+            if (clientSocket != null) {
                 try {
-                    socket.close();
+                    clientSocket.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -69,53 +64,49 @@ public class TCPTest2 {
                 }
             }
         }
-
     }
-
+    
     @Test
     public void client() {
-        Socket socket = null;
-        OutputStream os = null;
-        BufferedInputStream bis = null;
+        Socket serverSocket = null;
+        OutputStream outputStream = null;
+        BufferedInputStream bufferedInputStream = null;
         try {
-            socket = new Socket("127.0.0.1", 9090);
-            os = socket.getOutputStream();
-
-            //客户端从本地读取文件
-            bis = new BufferedInputStream(new FileInputStream("E:/IDEAProject/JavaBasics/src/pers/yangzhen/io/iostreamdocuments/头像.jpg"));
+            serverSocket = new Socket("127.0.0.1", 9090);
+            outputStream = serverSocket.getOutputStream();
+            // 客户端从本地读取文件
+            bufferedInputStream = new BufferedInputStream(
+                    new FileInputStream("./src/pers/yangzhen/io/iostreamfiles/头像src.jpg"));
             byte[] buffer = new byte[1024];
             int len;
-            while ((len = bis.read(buffer)) != -1) {//将文件从指定位置读到输入流中
-                os.write(buffer, 0, len);//将文件通过输出流写出去，发送给指定IP地址下的端口
+            while ((len = bufferedInputStream.read(buffer)) != -1) {
+                // 将文件通过输出流写出去，发送给指定 IP 地址的端口
+                outputStream.write(buffer, 0, len);
             }
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            if (bis != null) {
+            if (bufferedInputStream != null) {
                 try {
-                    bis.close();
+                    bufferedInputStream.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
-
-            if (os != null) {
+            if (outputStream != null) {
                 try {
-                    os.close();
+                    outputStream.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
-
-            if (socket != null) {
+            if (serverSocket != null) {
                 try {
-                    socket.close();
+                    serverSocket.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         }
-
-
     }
 }
